@@ -1,4 +1,14 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
+import VueGtag from "vue-gtag";
 
-createApp(App).mount('#app')
+let gid = "G-9BG0XNLQHR";
+if (window.location.pathname.includes("touch_wood")) {
+  gid = "G-D530PNCFKC";
+}
+console.log(gid);
+createApp(App)
+  .use(VueGtag, {
+    config: { id: gid },
+  })
+  .mount("#app");

@@ -43,6 +43,7 @@ export default {
       if (number == 4) number = 0;
 
       this.giftMessage = array[number];
+      this.$gtag.event('gfitMessage', { message: array[number] })
     },
   },
   computed: {
@@ -55,7 +56,10 @@ export default {
 
       let number = Math.floor(Math.random() * array.length);
       if (number == 4) number = 0;
+      
+      let imageNameArray = array[number].split("/")
 
+      this.$gtag.event('giftImage', { name: imageNameArray[3] })
       return array[number];
     },
   },
