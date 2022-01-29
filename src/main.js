@@ -4,10 +4,10 @@ import VueGtag from "vue-gtag";
 
 let gid = "G-9BG0XNLQHR";
 if (window.location.pathname.includes("touch_wood")) {
-  console.log(window.location.pathname);
   gid = "G-D530PNCFKC";
 }
-console.log(gid);
+console.log(`gid: ${gid}`);
+
 createApp(App)
   .use(VueGtag, {
     config: { id: gid },
